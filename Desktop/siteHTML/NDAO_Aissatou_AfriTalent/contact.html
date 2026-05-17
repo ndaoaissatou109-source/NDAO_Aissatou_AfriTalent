@@ -6,14 +6,293 @@
  <title>AfriTalent — Contact</title>
  <!-- Bootstrap 5 via CDN : feuille de style -->
  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
  <!-- mon  feuille de style personnelle -->
  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
  <!-- Le contenu de la page sera ajoute ici -->
+<header>
+ 
+ <!-- Navigation Bootstrap commune a toutes les pages -->
+   
+   <nav class="navbar navbar-expand-md navbar-dark  bg-secondary fixed-top" >
+    <div class="container">
+      <div class="logo">
+        <div class="logo">
+                 <span class="bg-dark bg-gradient p-1 rounded-3 text-light">AFRI</span> <img src="images/afrique.jpg" width="30px"  alt="Afrique" class="africa-img me-2  rounded-pill"> TALENT </a>
+                </div>
+       
+      </div>
+       
+     <button class="navbar-toggler" type="button"
+          data-bs-toggle="collapse"
+           data-bs-target="#navMenu"
+           aria-controls="navMenu"
+            aria-expanded="false"aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+    <div class="collapse navbar-collapse" id="navMenu">
+     <ul class="navbar-nav ms-auto">
+           <li class="nav-item"><a class="nav-link active"href="index.html">Accueil</a></li>
+           <li class="nav-item"><a class="nav-link"href="freelances.html">Freelances</a></li>
+           <li class="nav-item"><a class="nav-link"href="tarifs.html">Tarifs</a></li>
+           <li class="nav-item"><a class="nav-link" href="about.html">Apropos</a></li>
+           <li class="nav-item" ><a class="nav-link"href="contact.html" >Contact</a></li>
+           <li class="nav-item" ><a class="nav-link"href="block.html" >block</a></li>
+      </ul>
+ </div>
+ </div>
+ </nav>
+</header>
+<main>
+<section>
+  <div class="card bg-dark text-white border-0 position-relative w-100 vh-100 overflow-hidden rounded-0 mt-5">
+  <!-- L'image qui s'adapte à 100% de l'écran avec l'effet de flou -->
+  <img src="images/entreprise.png" class="card-img w-100 h-100 opacity-50" alt="Image plein écran" style="filter: blur(0px); object-fit: cover;">
+
+  <!-- Le texte parfaitement centré par-dessus -->
+  <div class="card-img-overlay d-flex flex-column justify-content-center align-items-center text-center">
+    <!-- <h1 class="card-title fw-bold display-1 text-uppercase">Mon Grand Titre</h1> -->
+    <h1 class="card-text fs-3 max-width-600 fw-light">bienvenu dans notre site AFRITALENT.</h1>
+    <button class="btn btn-primary btn-lg mt-4 " href=" #formulaire" >S inscrire</button>
+  </div>
+</div>
+
+</section>
+</main>
+<main>
+  
+<section  id="formulaire">
+  <h1  class="text-center mt-5">  Formulaire </h1>
+    <h2 class="text-center fw-light"> 
+      <p> Voici  notre formulaire de contact :</p>
+        <p> vous pouvez valider apres avoir remplit tout les champs</p></h2>
+        
+         <!-- Message de Succès Global (Masqué par défaut) 
+         <div id="successAlert" class="alert alert-success alert-dismissible fade d-none mb-4 rounded-4 shadow-sm" role="alert">
+            <div class="d-flex align-items-center">
+                <i class="bi bi-check-circle-fill fs-3 me-3"></i>
+                <div>
+                    <h5 class="alert-heading fw-bold mb-1">Message envoyé avec succès !</h5>
+                    <p class="mb-0 small">Merci pour votre intérêt. Notre équipe vous répondra dans les plus brefs délais.</p>
+                </div>
+            </div>  --> 
+            <!-- Réseaux Sociaux -->
+                    <div class="d-flex gap-3 pt-3 border-top border-white border-opacity-25">
+                        <a href="#" class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center" style="width: 40px; height: 40px;"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center" style="width: 40px; height: 40px;"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center" style="width: 40px; height: 40px;"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+           
+        </div>
+
+        <div class="row g-4 justify-content-center  bg-white shadow-sm rounded-5 overflow-hidden">
+            
+            <!-- COLONNE INTERACTIVE DE GAUCHE : INFOS DE CONTACT -->
+            <div class="col-12 col-lg-4 d-flex">
+               
+                <div class="card bg-secondary text-white p-4 rounded-4 shadow-lg border-0 w-100 d-flex flex-column justify-content-between">
+                    <div>
+                        <img src="images/afrique.jpg" width="30" height="30" class="me-2 rounded shadow-sm" alt="Afrique">
+                         <span class="fs-4 fw-bold">AFRITALENT</span>
+                        <h3 class="fw-bold mb-3">Restons en contact</h3> 
+                       
+                        <p class="text-white-50 small mb-4">Une question ou une suggestion ? Remplissez le formulaire et nous vous répondrons sous 24 heures.</p>
+                        
+                        <!-- Liste d'infos -->
+                        <div class="d-flex align-items-start mb-3">
+                            <div class="bg-white bg-opacity-25 rounded-3 p-2 me-3">
+                                <i class="bi bi-geo-alt-fill fs-5"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-0">Adresse</h6>
+                                <small class="text-white-50">Almadie dakar senegal</small>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start mb-3">
+                            <div class="bg-white bg-opacity-25 rounded-3 p-2 me-3">
+                                <i class="bi bi-telephone-fill fs-5"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-0">Téléphone</h6>
+                                <small class="text-white-50">+221 77 456 23 89</small>
+                            </div>
+                        </div>
+
+                        <div class="d-flex align-items-start mb-4">
+                            <div class="bg-white bg-opacity-25 rounded-3 p-2 me-3">
+                                <i class="bi bi-envelope-at-fill fs-5"></i>
+                            </div>
+                            <div>
+                                <h6 class="fw-bold mb-0">Email</h6>
+                                <small class="text-white-50">.....t@.....com</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Réseaux Sociaux -->
+                    <div class="d-flex gap-3 pt-3 border-top border-white border-opacity-25">
+                        <a href="#" class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center" style="width: 40px; height: 40px;"><i class="bi bi-facebook"></i></a>
+                        <a href="#" class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center" style="width: 40px; height: 40px;"><i class="bi bi-twitter-x"></i></a>
+                        <a href="#" class="text-white bg-white bg-opacity-10 rounded-circle p-2 d-inline-flex justify-content-center align-items-center" style="width: 40px; height: 40px;"><i class="bi bi-linkedin"></i></a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- COLONNE DE DROITE : LE FORMULAIRE -->
+            <div class="col-12 col-lg-7">
+                <div class="card bg-white p-4 p-sm-5 rounded-4 shadow-lg border-0">
+                    <h3 class="fw-bold text-dark mb-4">Envoyer un message</h3>
+                    
+                    <form id="contactForm" novalidate>
+                        <div class="row g-3">
+                            
+                            <!-- Champ Nom -->
+                            <div class="col-12 col-sm-6">
+                                <label for="lastName" class="form-label small fw-bold text-secondary">Nom</label>
+                                <input type="text" class="form-control bg-light py-2" id="lastName" placeholder="nom">
+                                <div class="invalid-feedback" id="lastNameError">Veuillez renseigner votre nom.</div>
+                            </div>
+
+                            <!-- Champ Prénom -->
+                            <div class="col-12 col-sm-6">
+                                <label for="firstName" class="form-label small fw-bold text-secondary">Prénom</label>
+                                <input type="text" class="form-control bg-light py-2" id="firstName" placeholder="prenom">
+                                <div class="invalid-feedback" id="firstNameError">Veuillez renseigner votre prénom.</div>
+                            </div>
+
+                            <!-- Champ Email -->
+                            <div class="col-12">
+                                <label for="email" class="form-label small fw-bold text-secondary">Adresse Email</label>
+                                <input type="email" class="form-control bg-light py-2" id="email" placeholder="prenom.nom@exemple.com">
+                                <div class="invalid-feedback" id="emailError">Veuillez entrer une adresse email valide.</div>
+                            </div>
+
+                            <!-- Champ Sujet (Menu déroulant) -->
+                            <div class="col-12">
+                                <label for="subject" class="form-label small fw-bold text-secondary">Sujet</label>
+                                <select class="form-select bg-light py-2" id="subject">
+                                    <option value="" selected disabled>Choisissez une option...</option>
+                                    <option value="general">je suis freelance</option>
+                                    <option value="support"> je cherches freelance</option>
+                                    
+                                </select>
+                                <div class="invalid-feedback" id="subjectError">Veuillez sélectionner un sujet dans la liste.</div>
+                            </div>
+
+                            <!-- Champ Message -->
+                            <div class="col-12">
+                                <label for="message" class="form-label small fw-bold text-secondary">Message</label>
+                                <textarea class="form-control bg-light" id="message" rows="5" placeholder="Votre message ici (minimum 20 caractères)..."></textarea>
+                                <div class="invalid-feedback" id="messageError">Votre message doit contenir au moins 20 caractères.</div>
+                            </div>
+
+                            <!-- Bouton de Soumission -->
+                            <div class="col-12 mt-4">
+                                <button type="submit" class="btn btn-primary px-4 py-2.5 rounded-3 fw-bold shadow-sm w-100 w-sm-auto">
+                                    valider <i class="bi bi-send ms-2"></i>
+                                </button>
+                            </div>
+
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+   
 
 
+    
 
+</section> 
+</main>
+
+
+<main>
+ <section>
+        <footer class="py-5 mt-5 bg-light border-top">
+  <div class="container">
+    <div class="row">
+      <!-- Section Logo et Description (Col 1) -->
+      <div class="col-lg-3 mb-3">
+        <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="/" aria-label="Afritalent">
+          <img src="images/afrique.jpg" width="30" height="30" class="me-2 rounded shadow-sm" alt="Afrique">
+          <span class="fs-4 fw-bold">AFRITALENT</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Révéler le potentiel, propulser l'ambition.</li>
+          <li class="mb-2">Afritalent s'engage à mettre en lumière la richesse du savoir-faire africain et à bâtir un écosystème où chaque talent trouve sa place.</li>
+        </ul>
+      </div>
+
+      <!-- Liens Utiles (Col 2) -->
+      <div class="col-6 col-lg-2 offset-lg-1 mb-3">
+        <h5 class="fw-bold">Liens utiles</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="freelances.html" class="text-decoration-none text-muted">Freelances</a></li>
+          <li class="mb-2"><a href="tarifs.html" class="text-decoration-none text-muted">Tarifs</a></li>
+          <li class="mb-2"><a href="about.html" class="text-decoration-none text-muted">À propos</a></li>
+          <li class="mb-2"><a href="entreprises.html" class="text-decoration-none text-muted">Entreprises</a></li>
+          <li class="mb-2"><a href="contact.html" class="text-decoration-none text-muted">S'inscrire</a></li>
+        </ul>
+      </div>
+
+      <!-- Ressources (Col 3) -->
+      <div class="col-6 col-lg-3 mb-3">
+        <h5 class="fw-bold">Ressources</h5>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2"><strong>Pour les freelances :</strong> Le contenu pour booster votre carrière.</li>
+          <li class="mb-2"><strong>Conseils Carrière :</strong> CV, entretiens et négociation de salaire.</li>
+          <li class="mb-2"><strong>Modèles :</strong> Templates de CV modernes et lettres de motivation.</li>
+        </ul>
+      </div>
+
+      <!-- Contact / Social (Col 4) -->
+      <div class="col-6 col-lg-2 mb-3">
+        <h5 class="fw-bold">Contact</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2">
+            <a href="https://instagram.com" class="text-decoration-none text-muted">
+              <i class="bi bi-instagram me-2"></i>Instagram
+            </a>
+          </li>
+          <li class="mb-2">
+            <a href="https://tiktok.com" class="text-decoration-none text-muted">
+              <i class="bi bi-tiktok me-2"></i>Tiktok
+            </a>
+          </li>
+          <li class="mb-2">
+            <a href="https://facebook.com" class="text-decoration-none text-muted">
+              <i class="bi bi-facebook me-2"></i>Facebook
+            </a>
+          </li>
+          <li class="mb-2">
+            <a href="https://twitter.com" class="text-decoration-none text-muted">
+              <i class="bi bi-twitter-x me-2"></i>Twitter
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="pt-4 mt-4 border-top text-center">
+      <p class="text-muted small">© 2026 Afritalent - Tous droits réservés</p>
+    </div>
+  </div>
+</footer>
+
+</section>
+       
+</main>
+ 
 
  <!-- Bootstrap 5 via CDN : script JavaScript -->
  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
