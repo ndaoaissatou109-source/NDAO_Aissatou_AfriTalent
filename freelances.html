@@ -10,9 +10,340 @@
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
+    <header>
+ <!-- NAVBAR -->
+ <nav class="navbar navbar-expand-lg fixed-top navbar-dark bg-dark ">
+    <div class="container">
+
+        <a class="navbar-brand" href="#">
+            AfriTalent
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#menu">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="menu">
+
+            <ul class="navbar-nav mx-auto">
+
+                <li class="nav-item"><a class="nav-link" href="index.html">Accueil</a></li>
+                <li class="nav-item"><a class="nav-link" href="freelances.html">Freelances</a></li>
+                <li class="nav-item"><a class="nav-link" href="tarif.html">Tarifs</a></li>
+                <li class="nav-item"><a class="nav-link" href="about.html">À propos</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Blog</a></li>
+                <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+
+            </ul>
+
+            <!-- Boutons à droite -->
+            <div class="d-flex align-items-center gap-2">
+
+                
+
+               <button class="btn-gold"> Se Connecter </button>
+            </div>
+
+        </div>
+    </div>
+ </nav>
+ <!-- HERO -->
+</header>
  <!-- le contenue de mon site-->
     
+<section class="container-fluid  afri-talent-hero-section ">
+    <div class="row align-items-center">
 
+        <!-- Texte -->
+        <div class="col-lg-6 ecriture mt-1">
+            <h2 class="display-3 fw-bold">
+                Des freelances qualifiés <i class="bi bi-patch-check-fill"></i>, </h2>
+              
+                <h1 class="text-primary display-1" > connectés au monde.</h1>
+            </h1>
+
+            <p class="lead mt-3 text-secondary fw-light">
+                AfriTalent met en relation les entreprises et les meilleurs
+                talents africains pour réaliser des projets d'exception.
+            </p>
+
+            
+        </div>
+
+        <!-- Vidéo -->
+        <div class="col-lg-6 video-hero">
+            <video autoplay muted loop class="w-100 rounded-4">
+                <source src="images/video.mp4" type="video/mp4">
+            </video>
+        </div>
+
+    </div>
+</section>
+             
+    </div>
+</section>
+</main>
+<main class="afri-talent-hero-section ">
+
+    <section class="container mt-4 mb-5   fade-in-section">
+      <h1>Nous vous presentons nos differentes Freelances</h1>
+  
+      <main>
+  <section class="mb-4   fade-in-section">
+    <div class="filter-container">
+      <button class="main-btn" id="toutBtn">
+        nos freelances <span>▼</span>
+      </button>
+      
+      <div class="filter-list" id="filterList">
+        <button class="filter-btn" data-filter="all">Tout</button>
+        <button class="filter-btn" data-filter="developpement">Développement</button>
+        
+        <button class="filter-btn" data-filter="data-scientist">Data Scientist</button>
+        <button class="filter-btn" data-filter="marketing">Marketing</button>
+        <button class="filter-btn" data-filter="Cybersecuriste">Cybersécurité</button>
+      </div>
+    </div>
+
+    <div class="row gy-4 mt-4 g-4 robert gallery">
+        
+        <div class="col-12 col-sm-6 col-md-4 freelance-item">
+          <div class="card" data-category="developpement">
+            <img src="images/senegal.png" class="card-img-top" alt="image de freelance">
+            <div class="card-body">
+              <h5 class="card-title">Astou</h5>
+              <p class="text-primary mb-1">Web Developer   </p>
+               
+              <p class="card-text fw-light">Conçoit et développe des sites web modernes, performants et adaptés à vos besoins.</p>
+              <span class="badge mb-2">Disponible </span>
+              <p class="mb-0 locale"><i class="bibi bi bi-geo-alt"></i> Sénégal</p> 
+              <a class="btn btn-primary text-light mt-2">voir le profil</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 freelance-item">
+          <div class="card" data-category="marketing">
+            <img src="images/lahad.png" class="card-img-top" alt="image de freelance">
+            <div class="card-body">
+              <h5 class="card-title">Amadou</h5>
+              <p class="text-primary mb-1">Marketing digital</p>
+              <p class="card-text fw-light">Gestion des réseaux sociaux et campagnes publicitaires pour développer votre visibilité.</p>
+              <p class="mb-0 locale"><i class="bibi bi bi-geo-alt"></i> Ghana</p> 
+              <a class="btn btn-primary text-light mt-2">voir le profil</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 freelance-item">
+          <div class="card" data-category="developpement">
+            <img src="images/julia.png" class="card-img-top" alt="image de freelance">
+            <div class="card-body">
+              <h5 class="card-title">julia</h5>
+              <p class="text-primary mb-1">Web developper</p>
+              <p class="card-text fw-light">Conçoit et développe des sites web modernes, performants et adaptés à vos besoins.</p>
+              <p class="mb-0 locale"><i class="bibi bi bi-geo-alt"></i> Togo</p> 
+              <a class="btn btn-primary text-light mt-2">voir le profil</a>
+            </div>
+          </div>
+        </div>
+        
+        <div class="col-12 col-sm-6 col-md-4 freelance-item">
+          <div class="card" data-category="data-scientist">
+            <img src="images/astou.png" class="card-img-top" alt="image de freelance">
+            <div class="card-body">
+              <h5 class="card-title">narcha</h5>
+              <p class="text-primary mb-1">data scientist</p>
+              <p class="card-text fw-light">Je transforme vos données brutes en décisions stratégiques en faisant parler les chiffres.</p>
+              <p class="mb-0 locale"><i class="bibi bi bi-geo-alt"></i> Côte d'ivoire</p> 
+              <a class="btn btn-primary text-light mt-2">voir le profil</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 freelance-item">
+          <div class="card" data-category="Cybersecuriste">
+            <img src="images/algerie.png" class="card-img-top" alt="image de freelance">
+            <div class="card-body">
+              <h5 class="card-title">Karim</h5>
+              <p class="text-primary mb-1">Administrateur</p>
+              <p class="card-text fw-light">Garant de la fluidité, de la performance et de la sécurité de vos infrastructures professionnelles.</p>
+              <p class="mb-0 locale"><i class="bibi bi bi-geo-alt"></i> Algérie</p> 
+              <a class="btn btn-primary text-light mt-2">voir le profil</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 freelance-item">
+          <div class="card" data-category="Cybersecuriste">
+            <img src="images/cyber.png" class="card-img-top" alt="image de freelance">
+            <div class="card-body">
+              <h5 class="card-title">Abdou</h5>
+              <p class="text-primary mb-1">Cybersécurist</p>
+              <p class="card-text fw-light">Protéger vos données aujourd'hui pour garantir votre liberté numérique demain.</p>
+              <p class="mb-0 locale"><i class="bibi bi bi-geo-alt"></i> Sénégal</p> 
+              <a class="btn btn-primary text-light mt-2">voir le profil</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 freelance-item">
+          <div class="card" data-category="marketing">
+            <img src="images/maroc.png" class="card-img-top" alt="image de freelance">
+            <div class="card-body">
+              <h5 class="card-title">Fatima</h5>
+              <p class="text-primary mb-1">Design</p>
+              <p class="card-text fw-light">Un bon design est invisible : il guide l'utilisateur sans qu'il n'ait jamais à se demander où cliquer.</p>
+              <p class="mb-0 locale"><i class="bibi bi bi-geo-alt"></i> Maroc</p> 
+              <a class="btn btn-primary text-light mt-2">voir le profil</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 freelance-item">
+          <div class="card" data-category="Cybersecuriste">
+            <img src="images/malgache.png" class="card-img-top" alt="image de freelance">
+            <div class="card-body">
+              <h5 class="card-title">Khayari</h5>
+              <p class="text-primary mb-1">Cybersécurist</p>
+              <p class="card-text fw-light">Boostez votre entreprise avec les solutions DevOps et Cloud : rapidité, sécurité et performance garanties.</p>
+              <p class="mb-0 locale"><i class="bibi bi bi-geo-alt"></i> Madagascar</p> 
+              <a class="btn btn-primary text-light mt-2">voir le profil</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 freelance-item">
+          <div class="card" data-category="data-scientist">
+            <img src="images/congo.png" class="card-img-top" alt="image de freelance">
+            <div class="card-body">
+              <h5 class="card-title">Kabila</h5>
+              <p class="text-primary mb-1">data scientist</p>
+              <p class="card-text fw-light">Faites évoluer votre entreprise avec Redaction Tech, le professionnalisme au rendez-vous.</p>
+              <p class="mb-0 locale"><i class="bibi bi bi-geo-alt"></i> Congo</p> 
+              <a class="btn btn-primary text-light mt-2">voir le profil</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 freelance-item">
+          <div class="card" data-category="">
+            <img src="images/claire.png" class="card-img-top" alt="image de freelance">
+            <div class="card-body">
+              <h5 class="card-title">claire</h5>
+              <p class="text-primary mb-1">Web Developer</p>
+              <p class="card-text fw-light">Conçoit et développe des sites web modernes, performants et adaptés à vos besoins.</p>
+              <p class="mb-0 locale"><i class="bibi bi bi-geo-alt"></i> Sénégal</p> 
+              <a class="btn btn-primary text-light mt-2">voir le profil</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 freelance-item">
+          <div class="card" data-category="marketing">
+            <img src="images/egypt.png" class="card-img-top" alt="image de freelance">
+            <div class="card-body">
+              <h5 class="card-title">lahad</h5>
+              <p class="text-primary mb-1">Marketing digital</p>
+              <p class="card-text fw-light">Gestion des réseaux sociaux et campagnes publicitaires pour développer votre visibilité.</p>
+              <p class="mb-0 locale"><i class="bibi bi bi-geo-alt"></i> Égypte</p> 
+              <a class="btn btn-primary text-light mt-2">voir le profil</a>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-12 col-sm-6 col-md-4 freelance-item">
+          <div class="card" data-category="data-scientist">
+            <img src="images/egypte.png" class="card-img-top" alt="image de freelance">
+            <div class="card-body">
+              <h5 class="card-title">zougrana</h5>
+              <p class="text-primary mb-1">data scientist</p>
+              <p class="card-text fw-light">Conçoit et développe des sites web modernes, performants et adaptés à vos besoins.</p>
+              <p class="mb-0 locale"><i class="bibi bi bi-geo-alt"></i> Bénin</p> 
+              <a class="btn btn-primary text-light mt-2">voir le profil</a>
+            </div>
+          </div>
+        </div>
+
+    </div> 
+  </section>
+
+ <footer class="py-5  border-top footer border-top" >
+  <div class="container fade-in-section  ">
+    <div class="row">
+      <!-- Section Logo et Description (Col 1) -->
+      <div class="col-lg-3 mb-3">
+        <a class="d-inline-flex align-items-center mb-2 link-dark text-decoration-none" href="/" aria-label="Afritalent">
+          <img src="images/afrique.jpg" width="30" height="30" class="me-2 rounded shadow-sm" alt="Afrique">
+          <span class="fs-4 fw-bold">AFRITALENT</span>
+        </a>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2">Révéler le potentiel, propulser l'ambition.</li>
+          <li class="mb-2">Afritalent s'engage à mettre en lumière la richesse du savoir-faire africain et à bâtir un écosystème où chaque talent trouve sa place.</li>
+        </ul>
+      </div>
+
+      <!-- Liens Utiles (Col 2) -->
+      <div class="col-12 col-md-6 col-lg-2 mb-3 offset-lg-1 mb-3">
+        <h5 class="fw-bold">Liens utiles</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2"><a href="freelances.html" class="text-decoration-none text-muted">Freelances</a></li>
+          <li class="mb-2"><a href="tarifs.html" class="text-decoration-none text-muted">Tarifs</a></li>
+          <li class="mb-2"><a href="about.html" class="text-decoration-none text-muted">À propos</a></li>
+          <li class="mb-2"><a href="entreprises.html" class="text-decoration-none text-muted">Entreprises</a></li>
+          <li class="mb-2"><a href="contact.html" class="text-decoration-none text-muted">S'inscrire</a></li>
+        </ul>
+      </div>
+
+      <!-- Ressources (Col 3) -->
+      <div class="col-12 col-md-6 col-lg-3  mb-3">
+        <h5 class="fw-bold">Ressources</h5>
+        <ul class="list-unstyled small text-muted">
+          <li class="mb-2"><strong>Pour les freelances :</strong> Le contenu pour booster votre carrière.</li>
+          <li class="mb-2"><strong>Conseils Carrière :</strong> CV, entretiens et négociation de salaire.</li>
+          <li class="mb-2"><strong>Modèles :</strong> Templates de CV modernes et lettres de motivation.</li>
+        </ul>
+      </div>
+
+      <!-- Contact / Social (Col 4) -->
+      <div class="col-6 col-lg-2 mb-3">
+        <h5 class="fw-bold">Contact</h5>
+        <ul class="list-unstyled">
+          <li class="mb-2">
+            <a href="https://instagram.com" class="text-decoration-none text-muted">
+              <i class="bi bi-instagram me-2"></i>Instagram
+            </a>
+          </li>
+          <li class="mb-2">
+            <a href="https://tiktok.com" class="text-decoration-none text-muted">
+              <i class="bi bi-tiktok me-2"></i>Tiktok
+            </a>
+          </li>
+          <li class="mb-2">
+            <a href="https://facebook.com" class="text-decoration-none text-muted">
+              <i class="bi bi-facebook me-2"></i>Facebook
+            </a>
+          </li>
+          <li class="mb-2">
+            <a href="https://twitter.com" class="text-decoration-none text-muted">
+              <i class="bi bi-twitter-x me-2"></i>Twitter
+            </a>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Copyright -->
+    <div class="pt-4 mt-4 border-top text-center">
+      <p class="text-muted small">© 2026 Afritalent - Tous droits réservés</p>
+    </div>
+  </div>
+</footer>
+
+</section>
+
+ </footer>
+</main>
 
 
 
