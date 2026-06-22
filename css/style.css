@@ -1,0 +1,558 @@
+/* ==========================
+   RESET GLOBAL
+   Ici je remets tous les éléments à zéro
+   pour avoir un design propre et uniforme
+   ========================== */
+
+*{
+    margin:0; /* enlève les marges par défaut */
+    padding:0; /* enlève les espacements par défaut */
+    box-sizing:border-box; /* pour éviter les débordements */
+    font-family:'Outfit',sans-serif; /* police globale du site */
+}
+
+/* ==========================
+   THEME LIGHT (MON STYLE PRINCIPAL)
+   Ici je définis les couleurs générales du site
+   ========================== */
+
+body{
+    background:#c1dfff; /* couleur de fond du site */
+    color:#1a2c47; /* couleur principale du texte */
+    transition:.4s; /* animation douce quand changement */
+}
+
+/* VARIABLES CSS
+   Ici je stocke mes couleurs pour les réutiliser partout */
+:root{
+    --bg:#bfdaf6; /* fond global */
+    --card:#ffffff; /* couleur des cartes */
+
+    --primary:#00618a; /* couleur principale */
+    --primary-light:#0f7ea8; /* version claire */
+
+    --accent:#935401; /* couleur accent (boutons/titres) */
+    --accent-light:#804e08; /* version claire accent */
+
+    --text:#172841; /* texte principal */
+    --text-muted:#8ca0b7; /* texte secondaire */
+}
+.body{
+    background: var(--bg);
+}
+
+/* ==========================
+   NAVBAR (MENU EN HAUT)
+   ========================== */
+
+.navbar{
+    background:rgba(13, 45, 69, 0.9); /* fond semi transparent */
+    backdrop-filter:blur(20px); /* effet flou moderne */
+    border-bottom:1px solid rgba(0,0,0,0.08); /* petite séparation */
+}
+
+/* logo du site */
+.navbar-brand{
+    font-size:1.8rem; /* taille du logo */
+    font-weight:800; /* texte très gras */
+    color:var(--accent)!important; /* couleur accent */
+}
+
+/* liens du menu */
+.nav-link{
+    color:#e1e5ea!important; /* couleur des liens */
+    margin-left:15px; /* espace entre les liens */
+    transition:.3s; /* animation fluide */
+}
+
+/* effet quand je passe la souris sur les liens */
+.nav-link:hover{
+    color:var(--accent)!important; /* change couleur */
+}
+
+/* ==========================
+   BOUTON PRINCIPAL
+   ========================== */
+
+.btn-gold{
+    background:linear-gradient(
+        135deg,
+        var(--accent),
+        var(--accent-light)
+    ); /* dégradé du bouton */
+    color:white; /* texte blanc */
+    border:none; /* pas de bordure */
+    padding:12px 25px; /* espace interne */
+    border-radius:50px; /* bouton rond */
+    font-weight:700; /* texte gras */
+    transition:.3s; /* animation */
+}
+
+/* effet quand on passe la souris */
+.btn-gold:hover{
+    transform:translateY(-3px); /* petit effet de montée */
+}
+
+/* ==========================
+   HERO SECTION (ACCUEIL)
+   ========================== */
+
+.hero{
+    min-height:100vh; /* prend toute la hauteur écran */
+    display:flex; /* flexbox */
+    align-items:center; /* centre verticalement */
+    position:relative; /* pour les effets internes */
+    overflow:hidden; /* cache les débordements */
+}
+
+/* effet décoratif lumineux derrière le hero */
+.hero::before{
+    content:''; /* obligatoire pour afficher pseudo-element */
+    position:absolute;
+    width:500px;
+    height:500px;
+    background:var(--primary);
+    border-radius:50%; /* forme cercle */
+    filter:blur(250px); /* effet flou */
+    opacity:.12; /* transparence */
+    right:-150px; /* position droite */
+    top:-100px; /* position haut */
+}
+
+/* titre principal */
+.hero h1{
+    font-size:4.5rem; /* très grand titre */
+    font-weight:800; /* très gras */
+    line-height:1.1; /* espace entre lignes */
+    color: var(--text) !important;
+}
+
+/* mot accent dans le titre */
+.hero span{
+    color:var(--accent) ; /* couleur spéciale */
+}
+
+/* texte sous le titre */
+.hero p{
+    color:var(--text-muted); /* gris doux */
+    margin-top:20px; /* espace haut */
+    margin-bottom:30px; /* espace bas */
+    font-size:1.1rem; /* taille normale */
+}
+
+/* image du hero */
+.hero-img{
+    width:80%; /* je réduis la taille de l’image */
+    border-radius:30px; /* coins arrondis */
+    box-shadow:0 20px 60px rgba(0,0,0,.1); /* ombre douce */
+}
+
+/* ==========================
+   STATISTIQUES
+   ========================== */
+.stat-box{
+    background:var(--card);
+    padding:12px 15px;   /* 👈 réduit la hauteur */
+    border-radius:18px;
+    text-align:center;
+    border:1px solid rgba(0,0,0,0.08);
+    transition:.3s;
+    
+
+    min-height:50px;     /* 👈 rend la carte plus plate */
+    display:flex;        /* 👈 centre verticalement */
+    flex-direction:column;
+    justify-content:center;
+}
+/* effet hover des stats */
+.stat-box:hover{
+    transform:translateY(-8px); /* monte légèrement */
+    border: #003349;
+}
+
+/* nombre des stats */
+.stat-box h2{
+    color:var(--accent); /* couleur accent */
+    font-weight:800; /* gras */
+}
+
+/* ==========================
+   TITRES DE SECTION
+   ========================== */
+
+.section-title{
+    font-size:3rem; /* grand titre */
+    font-weight:800; /* gras */
+    text-align:center; /* centré */
+    margin-bottom:60px; /* espace bas */
+}
+
+/*
+   CARTES SERVICES
+   */
+
+.service-card{
+    background:var(--card); /* fond blanc */
+    border-radius:25px; /* coins arrondis */
+    overflow:hidden; /* cache débordement */
+    transition:.4s; /* animation */
+    border:1px solid var(--primary); /* bordure légère */
+}
+
+/* effet hover sur cartes */
+.service-card:hover{
+    transform:translateY(-10px); /* monte */
+    border-color:var(--primary-light); /* bordure bleue */
+    box-shadow:0 20px 40px rgba(0,0,0,0.08); /* ombre */
+}
+
+/* image dans les cartes */
+.service-card img{
+    width:100%; /* prend toute la largeur */
+    height:220px; /* hauteur fixe */
+    object-fit:cover; /* image bien coupée */
+}
+
+/* contenu carte */
+.service-card .content{
+    padding:25px; /* espace interne */
+}
+
+/* titre carte */
+.service-card h4{
+    font-weight:700; /* gras */
+}
+
+/* icônes */
+.service-card i{
+    color:var(--accent); /* couleur accent */
+    font-size:1.5rem; /* taille icône */
+}
+
+/* ==========================
+   CTA (BLOC ACTION)
+   ========================== */
+
+.cta{
+    background:linear-gradient(
+        135deg,
+        #645203,
+        #095665
+    ); /* dégradé clair */
+    border:1px solid rgba(0,0,0,0.08);
+    border-radius:30px;
+    padding:80px 40px;
+    text-align:center;
+}
+
+/* titre CTA */
+.cta h2{
+    font-size:3rem;
+    font-weight:800;
+}
+
+/* ==========================
+   FOOTER
+   ========================== */
+
+footer{
+    background:var(--text);   /* fond sombre */
+    color:#ffffff;        /* texte blanc */
+}
+
+footer a{
+    color:#ffffff !important;  /* liens blancs */
+    opacity:0.8;
+}
+
+footer a:hover{
+    opacity:1;
+    color:#064f69 !important; /* bleu au hover */
+}
+
+footer .text-muted{
+    color:rgba(255,255,255,0.7) !important;
+      
+}
+.af {
+    color: white !important;
+}
+
+/* ==========================
+   SECTION SERVICES GRID
+   ========================== */
+
+.services-categories{
+    padding: 100px 20px;
+    text-align: center;
+}
+
+/* grille responsive */
+.services-grid{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+/* cartes services */
+.service-card{
+    padding: 35px 25px;
+    border-radius: 20px;
+    background: #ffffff;
+    border: 1px solid rgba(0,0,0,0.08);
+    transition: all 0.35s ease;
+    cursor: pointer;
+}
+
+/* hover cartes */
+.service-card:hover{
+    transform: translateY(-10px);
+    border-color: var(--primary-light);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+/* icône services */
+.service-card .icon{
+    font-size: 3rem;
+    margin-bottom: 20px;
+}
+
+/* compteur freelances */
+.freelancers-count{
+    font-weight: 700;
+    color: var(--primary);
+}
+
+/* description section */
+.section-description{
+    max-width: 700px;
+    margin: 0 auto 60px;
+    font-size: 1.05rem;
+    line-height: 1.8;
+    color:#555;
+}
+
+/* texte bas de section */
+.services-footer{
+    margin-top: 50px;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+/* ==========================
+   BONUS FINAL
+   ========================== */
+
+.statt{
+    color:var(--primary) !important; /* couleur forcée */
+}
+
+/* css frelances */
+.special{
+    color: var(--accent) !important;
+}
+/* tarif */
+.Populaire{
+    background-color: var(--accent); /* bg pour le populaire */
+    border-color: var(--accent) !important;
+}
+/* css des boutons */
+/* Style de base pour tous les boutons */
+.btn-custom {
+    padding: 12px 24px !important;      /* Padding moyen */
+    border: none !important;
+    border-radius: 10px !important;
+    font-weight: bold !important;
+    cursor: pointer  !important;
+    
+}
+
+/* Couleur bleue nuit pour le premier */
+.b1 {
+    background-color:var(--text) !important; /* MidnightBlue */
+    color: white !important;
+}
+
+/* Couleur or pour le deuxième */
+.b2 {
+    background-color: var(--accent) !important; /* Gold */
+    color: #fcf9f9 !important;
+}
+.b3 {
+    background-color: var(--text);
+    color: #ffffff;
+}
+.border-gold{
+    border-radius: 10;
+    border-color: var(--accent);
+}
+ /* about */
+ /* =========================
+   CAROUSEL
+========================= */
+.carousel {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  padding-bottom: 10px;
+  scroll-behavior: smooth;
+}
+
+.carousel::-webkit-scrollbar {
+  display: none;
+}
+
+
+
+/* hover */
+.carousel .card:hover {
+  transform: translateY(-6px);
+}
+
+/* =========================
+   CONTENU
+========================= */
+.carousel .card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  color: inherit; /* IMPORTANT → respecte dark mode */
+}
+
+.carousel .card h3 i {
+  margin-right: 6px;
+  color: inherit; /* IMPORTANT → ne force pas bleu */
+}
+
+.carousel .card p {
+  font-size: 15px;
+  color: inherit; /* IMPORTANT → dark mode safe */
+  line-height: 1.5;
+}
+
+/* =========================
+   BOUTON
+========================= */
+.carousel .card button {
+  margin-top: 12px;
+  padding: 8px 14px;
+  
+
+  border: none;
+  border-radius: 10px;
+
+  background:var(--accent);
+  color: white;
+
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.carousel .card button:hover {
+  background: #02313e;
+  transform: scale(1.05);
+}
+/* 🌍 Police globale */
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f8f9fb;
+    color:var(--text);
+}
+
+/* 🔥 TITRES */
+h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 2rem;
+    font-weight: 600;
+    color: #112d49;
+}
+
+h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #1e354d;
+}
+
+/* 📄 PARAGRAPHES */
+p {
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.7;
+    color: #4c5a68;
+}
+
+/* 🔗 LIENS */
+
+a {
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    color: var(--accent);
+    font-weight: 500;
+    transition: 0.3s;
+}
+
+a:hover {
+    color: var(--primary);
+    text-decoration: underline;
+}
+
+
+button:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* ✨ BONUS: petit style global clean */
+* {
+    box-sizing: border-box;
+}
+
+/* 🌍 Conteneur de la carte Google Maps */
+.map-container {
+    border-radius: 20px; /* arrondit les coins de la carte */
+    overflow: hidden; /* cache ce qui dépasse des bords arrondis */
+    height: 350px; /* fixe la hauteur de la carte */
+}
+
+/* 🗺️ iframe de la carte Google Maps */
+.map-container iframe {
+    width: 100%; /* prend toute la largeur du conteneur */
+    height: 100%; /* prend toute la hauteur du conteneur */
+    border: 0; /* enlève la bordure de l'iframe */
+}
+
+/* 🚫 Empêche le scroll horizontal sur toute la page */
+body {
+  overflow-x: hidden; /* cache le défilement horizontal */
+}
+/* 🖼️ IMAGE DE CONTACT (style général) */
+.contact-img {
+  border-radius: 20px; /* arrondit les coins de l'image */
+}
+
+/* 🖼️ IMAGE DE CONTACT (version complète + design moderne) */
+.contact-img {
+  width: 100%; /* l'image prend toute la largeur disponible */
+  max-width: 450px; /* limite la taille maximale */
+  border-radius: 18px; /* coins arrondis pour un style moderne */
+  border: 2px solid rgba(255,255,255,0.2); /* bordure légère transparente */
+  transition: all 0.4s ease; /* animation fluide lors des effets */
+  object-fit: cover; /* évite la déformation de l'image */
+}
+
+/* ✨ EFFET AU SURVOL (hover) */
+.contact-img:hover {
+  transform: scale(1.05); /* zoom léger au survol */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* ombre élégante */
+  border-color: #00bfff; /* bordure bleue au survol */
+}
+/* RESET CSS */
