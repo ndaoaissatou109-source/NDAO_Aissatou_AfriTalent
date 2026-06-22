@@ -404,7 +404,17 @@ footer .text-muted{
 }
 
 
+/* bouton je cherches freelances  */
+.jecher{
+    background: var(--primary);
+    color: #f8fafc !important;
+    border-radius: 2cm;
 
+}
+.jecher:hover {
+    color: var(--text) !important;
+    background: #d4e2e9 !important;
+}
 /* hover */
 .carousel .card:hover {
   transform: translateY(-6px);
@@ -777,4 +787,166 @@ body {
 }
 .biii {
     font-size: 4.2rem !important;
+}
+/* ==========================================================================
+   STRUCTURE RESPONSIVE TOTALE (À mettre tout en bas de style.css)
+   ========================================================================== */
+
+/* 1. TABLETTE ET PETITS ÉCRANS PC (Moins de 992px) 
+   -------------------------------------------------------------------------- */
+@media (max-width: 991.98px) {
+    /* Vos ajustements globaux pour tablettes */
+    
+}
+
+/* 2. TABLETTE FORMAT PORTRAIT (Moins de 768px) - Votre test 768px
+   -------------------------------------------------------------------------- */
+@media (max-width: 767.98px) {
+    .hero h1 {
+        font-size: 3rem !important; /* Le titre diminue un peu sur tablette */
+    }
+    
+    /* On peut réduire légèrement les paddings/espaces ici */
+    .hero {
+        padding: 50px 0;
+    }
+}
+
+/* 3. MOBILE (Moins de 576px) - Idéal pour vos tests à 375px et 301px
+   -------------------------------------------------------------------------- */
+@media (max-width: 575.98px) {
+    /* --- SECTION HERO (Ajustement du texte qui débordait) --- */
+    .hero h1 {
+        font-size: 2rem !important;       /* Taille parfaite pour 375px et moins */
+        line-height: 1.15 !important;     /* Évite le chevauchement des lignes */
+        letter-spacing: -0.5px;
+    }
+
+    .hero p {
+        font-size: 0.95rem !important;    /* Paragraphe plus lisible sur mobile */
+        margin-bottom: 1.5rem !important;
+    }
+
+    /* --- BOUTONS --- */
+    /* On s'assure que les boutons prennent de la place mais restent cliquables */
+    .hero .btn {
+        width: 100% !important;           /* Force les boutons à s'empiler proprement */
+        padding: 12px 20px !important;    /* Plus facile à cliquer avec le pouce */
+        font-size: 0.95rem !important;
+    }
+
+    /* --- IMAGE --- */
+    .hero-img {
+        width: 100% !important;
+        max-height: 300px;                /* Évite que l'image soit trop haute sur mobile */
+        object-fit: cover;
+        margin-top: 20px;
+    }
+}
+
+/* 4. TRÈS PETITS MOBILES (Moins de 340px) - Sécurité pour l'écran à 301px vu avant
+   -------------------------------------------------------------------------- */
+@media (max-width: 340px) {
+    .hero h1 {
+        font-size: 1.7rem !important;     /* Réduction ultime pour les mini-écrans */
+    }
+}
+
+/* ==========================================================================
+   CARROUSEL HORIZONTAL GLISSANT (100% RESPONSIVE & SANS BOUTONS)
+   ========================================================================== */
+
+/* 1. Conteneur principal (Masque tout débordement vertical indésirable) */
+.cards-slider-container {
+    width: 100% !important;
+    overflow-x: hidden !important; /* Empêche la page entière de scroller horizontalement */
+    padding: 20px 0 !important;
+}
+
+/* 2. Le rail coulissant (Gère le défilement horizontal et l'effet aimanté) */
+.cards-slider {
+    display: flex !important;          /* Aligne toutes les cartes sur une seule ligne */
+    gap: 20px !important;              /* Crée un espace uniforme entre chaque carte */
+    overflow-x: auto !important;       /* Active le défilement horizontal */
+    scroll-snap-type: x mandatory !important; /* Force l'effet "aimanté" (le scroll s'arrête pile sur une carte) */
+    scroll-behavior: smooth !important;/* Rend le glissement fluide */
+    padding: 10px 20px !important;     /* Espace interne pour ne pas couper les ombres des cartes */
+    
+    /* Optimisation du défilement tactile sur iOS (Safari) */
+    -webkit-overflow-scrolling: touch !important; 
+}
+
+/* 3. Masquage esthétique de la barre de défilement (Scrollbar) */
+.cards-slider::-webkit-scrollbar {
+    display: none !important; /* Cache la barre de défilement sur Chrome, Safari et Opera */
+}
+
+.cards-slider {
+    -ms-overflow-style: none !important;  /* Cache la barre de défilement sur Internet Explorer et Edge */
+    scrollbar-width: none !important;     /* Cache la barre de défilement sur Firefox */
+}
+
+/* 4. Style individuel des cartes (Fixe la largeur pour le glissement) */
+.cardvaleur {
+    flex: 0 0 290px !important;        /* Force chaque carte à faire exactement 290px de large sur mobile */
+    scroll-snap-align: center !important; /* Centre automatiquement la carte à l'écran après le glissement */
+    border: none !important;           /* Supprime la bordure par défaut de Bootstrap */
+    border-radius: 15px !important;    /* Arrondit les angles de la carte */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important; /* Ajoute une ombre douce */
+    background: #ffffff !important;    /* Force le fond blanc pour détacher la carte */
+}
+
+/* 5. Corps interne de la carte (Aligne le contenu et le bouton) */
+.cardvaleurbody {
+    border-radius: 15px !important;    /* Assure que le fond épouse les angles arrondis */
+    min-height: 290px !important;      /* Force toutes les cartes à avoir exactement la même hauteur */
+    display: flex !important;          /* Active Flexbox pour organiser le contenu verticalement */
+    flex-direction: column !important; /* Aligne les éléments du haut vers le bas */
+    justify-content: space-between !important; /* Pousse le bouton tout en bas et le titre tout en haut */
+}
+
+/* 6. Style des icônes et des titres */
+.statt {
+    color: #8B5A00 !important;         /* Applique votre couleur Or */
+    font-size: 1.35rem !important;     /* Taille de police adaptée aux smartphones */
+    font-weight: 600 !important;       /* Titre en semi-gras */
+}
+
+.statt i {
+    margin-right: 8px !important;      /* Espace entre l'icône Bootstrap et le texte */
+}
+
+/* 7. Style du bouton de la carte */
+.btn-gold-slider {
+    background-color: #063542 !important; /* Fond couleur Or */
+    color: #ffffff !important;            /* Texte blanc */
+    border: none !important;              /* Pas de bordure */
+    padding: 10px 20px !important;        /* Espacement interne pour un bouton large */
+    border-radius: 25px !important;       /* Bouton au format capsule (très arrondi) */
+    font-weight: 500 !important;
+    cursor: pointer !important;
+    transition: background 0.3s ease !important; /* Animation fluide au survol */
+}
+
+.btn-gold-slider:hover {
+    background-color: #a66d00 !important; /* Version légèrement plus claire au survol */
+}
+
+/* ==========================================================================
+   MEDIA QUERIES (AJUSTEMENTS TABLETTES ET ORDINATEURS)
+   ========================================================================== */
+
+/* Écrans intermédiaires (Tablettes à partir de 768px) */
+@media (min-width: 768px) {
+    .cardvaleur {
+        flex: 0 0 330px !important;    /* Élargit les cartes à 330px sur tablette */
+    }
+}
+
+/* Grands écrans (Ordinateurs à partir de 1200px) */
+@media (min-width: 1200px) {
+    .cards-slider {
+        justify-content: center !important; /* Centre la grille complète de cartes s'il y a assez de place */
+        overflow-x: visible !important;     /* Désactive le scroll devenu inutile sur grand écran */
+    }
 }
