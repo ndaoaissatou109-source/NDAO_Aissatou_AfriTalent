@@ -25,7 +25,7 @@ body{
 /* VARIABLES CSS
    Ici je stocke mes couleurs pour les réutiliser partout */
 :root{
-    --bg:#bfdaf6; /* fond global */
+    --bg:#d4e6fa; /* fond global */
     --card:#ffffff; /* couleur des cartes */
 
     --primary:#00618a; /* couleur principale */
@@ -555,4 +555,226 @@ body {
   box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4); /* ombre élégante */
   border-color: #00bfff; /* bordure bleue au survol */
 }
-/* RESET CSS */
+/* ==========================================================================
+   CONFIGURATIONS GLOBALES & RESPONSIVE DU BENTO GRID
+   ========================================================================== */
+
+/* --- LE CONTENEUR PRINCIPAL BENTO (Mobile par défaut : empilement vertical) --- */
+.bento-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Sur mobile : 1 seule colonne prend tout l'écran */
+  gap: 25px;                  /* Espace entre chaque carte */
+}
+
+/* --- STRUCTURE COMMUNE DES CARTES --- */
+.bento-card {
+  border-radius: 35px;        /* Beaux bords très arrondis comme sur l'image */
+  padding: 30px;              /* Espace interne entre le contenu et les bords de la carte */
+  display: flex;
+  flex-direction: column;     /* Aligne les éléments du haut vers le bas */
+  position: relative;         /* Permet de positionner des éléments absolus à l'intérieur */
+  overflow: hidden;           /* Empêche les éléments internes de déborder des arrondis */
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.02); /* Légère ombre douce sous les cartes */
+  
+  /* ANIMATION : Permet une transition fluide lors du survol (hover) */
+  transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1), 
+              box-shadow 0.3s ease, 
+              background-color 0.3s ease;
+}
+
+/* --- EFFET AU SURVOL (HOVER EFFECT) --- */
+.bento-card:hover {
+  transform: translateY(-8px); /* Souline la carte en la décalant de 8px vers le haut */
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12); /* Rend l'ombre plus forte pour un effet de relief */
+  cursor: pointer;             /* Change le curseur en main cliquable */
+}
+
+/* Ajustements de couleurs spécifiques au survol pour donner de l'impact */
+.step1:hover {
+  background-color: #f8fafc;   /* Blanchit légèrement le fond au survol */
+}
+.step2:hover {
+  background-color: #0c82ad;   /* Éclaircit subtilement le bleu canard */
+}
+.step3:hover {
+  background-color: #c77700;   /* Éclaircit subtilement le marron/ocre */
+}
+.step4:hover {
+  background-color: #223f64;   /* Éclaircit subtilement le bleu marine sombre */
+}
+
+
+/* --- EN-TÊTE DES CARTES (Pour aligner le numéro et l'icône) --- */
+.card-header-bento {
+  display: flex;
+  justify-content: space-between; /* Met le numéro à gauche et l'icône tout à droite */
+  align-items: center;            /* Aligne les deux verticalement sur le même axe */
+  width: 100%;
+  margin-bottom: 15px;            /* Espace sous l'en-tête */
+}
+
+/* --- LE BLOC DE TEXTE --- */
+.card-body-content {
+  margin-top: auto;               /* Pousse le texte automatiquement vers le bas de la carte */
+}
+
+/* --- STYLE DES NUMÉROS (01, 02, etc.) --- */
+.step-number {
+  font-size: 1.1rem;
+  font-weight: 800;
+  background: white;              /* Fond blanc pour le rond */
+  color: #112a46;                 /* Couleur du texte interne */
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;             /* Rend le fond parfaitement circulaire */
+  display: flex;
+  align-items: center;
+  justify-content: center;        /* Centre le numéro parfaitement au milieu du cercle */
+  box-shadow: 0 4px 15px rgba(0,0,0,0.06); /* Petite ombre sous le numéro */
+}
+
+/* --- TITRES ET PARAGRAPHES --- */
+.step-title {
+  display: block;
+  font-weight: 700;
+  font-size: 0.9rem;
+  margin-bottom: 8px;             /* Écritures "Étape X" */
+}
+
+.bento-card h3 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin-bottom: 10px;            /* Titre principal de la carte */
+  letter-spacing: -0.5px;
+}
+
+.bento-card p {
+  font-size: 0.95rem;
+  line-height: 1.5;               /* Espace vertical entre les lignes de texte */
+  opacity: 0.85;   
+  color: #fcf9f9;               /* Rend le paragraphe légèrement plus doux à l'œil */
+}
+
+/* ==========================================================================
+   TAILLE ET DESIGN DES ICÔNES ("LES BB")
+   ========================================================================== */
+
+/* Étape 1 : Grand cercle au centre */
+.icon-circle-large {
+  width: 110px;
+  height: 110px;
+  background: #f8fafd;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 30px auto;              /* Centre le bloc horizontalement */
+}
+.icon-circle-large i {
+  font-size: 7.8rem;              /* Très grand Bootstrap Icon */
+  color: var(--primary);
+}
+
+/* Étapes 2 & 3 : Icônes flottantes du haut */
+.icon-floating {
+  width: 80px;
+  height: 80px;
+  background: rgba(255, 255, 255, 0.12); /* Cercle blanc transparent en arrière-plan */
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-floating i {
+  font-size: 3.8rem;              /* Icône Bootstrap agrandie */
+  color: white;
+}
+
+/* Étape 4 : Icône Valise */
+.icon-briefcase {
+  background: rgba(255, 255, 255, 0.08);
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.icon-briefcase i {
+  font-size: 4.2rem;              /* Taille de la valise */
+  color: white;
+}
+
+/* ==========================================================================
+   COULEURS INITIALES DES CARTES
+   ========================================================================== */
+.step1 { background-color: #ffffff; color: #112a46; border: 1px solid #e2e8f0; }
+.step1 .step-title { color: #b87300; } /* Couleur ocre de l'Étape 1 */
+
+.step2 { background-color: #0a749b; color: white; } /* Bleu Canard */
+.step2 .step-title { color: rgba(255, 255, 255, 0.7); }
+
+.step3 { background-color: #b36b00; color: white; } /* Marron / Ocre Doré */
+.step3 .step-title { color: rgba(255, 255, 255, 0.7); }
+
+.step4 { background-color: #1a3352; color: white; } /* Bleu Marine Foncé */
+.step4 .step-title { color: rgba(255, 255, 255, 0.7); }
+
+
+/* ==========================================================================
+   AFFICHAGE POUR GRANDS ÉCRANS (ORDINATEURS) - MODE BENTO GRID RESPONSIVE
+   ========================================================================== */
+@media (min-width: 992px) {
+  .bento-grid {
+    /* La colonne 1 (carte blanche) est plus étroite (0.8fr) que les deux autres (1.1fr) */
+    grid-template-columns: 0.8fr 1.1fr 1.1fr;
+    
+    /* La ligne 1 (cartes bleues/marron) est moins haute (200px) que la ligne 2 (250px) */
+    grid-template-rows: minmax(200px, auto) minmax(250px, auto); 
+    gap: 25px;
+  }
+
+  /* --- POSITIONNEMENT STRICT DANS LA GRILLE --- */
+  
+  .step1 {
+    grid-column: 1;
+    grid-row: 1 / span 2; /* S'étire verticalement sur les 2 lignes à gauche */
+  }
+
+  .step2 {
+    grid-column: 2;
+    grid-row: 1;          /* Ligne du haut, au milieu */
+  }
+
+  .step3 {
+    grid-column: 3;
+    grid-row: 1;          /* Ligne du haut, à droite */
+  }
+
+  .step4 {
+    grid-column: 2 / span 2; /* S'étend horizontalement sur 2 colonnes (milieu + droite) */
+    grid-row: 2;          /* Ligne du bas */
+  }
+
+  /* --- ALIGNEMENT HORIZONTAL DE L'ÉTAPE 4 --- */
+  .step4-flex {
+    display: flex;
+    justify-content: space-between; /* Place le bloc texte à gauche et la valise à droite */
+    align-items: flex-end;          /* Aligne la valise tout en bas de la carte */
+    width: 100%;
+  }
+  
+  .step4-flex .text-area {
+    max-width: 70%;                 /* Empêche le texte d'écraser la valise à droite */
+  }
+}
+ /* bg du binto grid about */
+.kll {
+    background: var(--primary);
+}
+.etape3{
+    background: var(--accent-light);
+}
+.biii {
+    font-size: 4.2rem !important;
+}
