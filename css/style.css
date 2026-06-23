@@ -1261,3 +1261,160 @@ body.dark-theme .card .card-title {
     transform: translateX(0);
   }
 }
+
+
+
+
+/* champs de formulaire */
+/* ==========================================================================
+   CSS DE VALIDATION DU FORMULAIRE CONTACT (Sans impact sur tes classes existantes)
+   ========================================================================== */
+
+/* Forcer l'affichage du message d'erreur uniquement quand l'input a la classe d'erreur */
+.form-control.is-invalid ~ .invalid-feedback,
+.form-select.is-invalid ~ .invalid-feedback {
+  display: block !important;
+  color: #dc3545 !important;
+  font-weight: 500;
+  font-size: 0.85rem;
+}
+
+/* Changement de couleur des bordures en cas d'erreur */
+.form-control.is-invalid, 
+.form-select.is-invalid {
+  border-color: #dc3545 !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 12 12' width='12' height='12' fill='none' stroke='%23dc3545'%3e%3ccircle cx='6' cy='6' r='4.5' stroke-opacity='.5'/%3e%3cpath stroke-linejoin='round' d='M5.8 3.6h.4L6 6.5z'/%3e%3ccircle cx='6' cy='8.2' r='.6' fill='%23dc3545' stroke='none'/%3e%3c/svg%3e") !important;
+  background-repeat: no-repeat !important;
+  background-position: right calc(0.375em + 0.1875rem) center !important;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem) !important;
+}
+
+/* Changement de couleur des bordures en cas de succès */
+.form-control.is-valid, 
+.form-select.is-valid {
+  border-color: #198754 !important;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 8 8'%3e%3cpath fill='%23198754' d='M2.3 6.73L.6 4.53c-.4-1.04.46-1.4 1.1-.8l1.1 1.4 3.4-3.8c.6-.63 1.6-.27 1.2.73L3.46 6.7c-.26.38-.82.42-1.16.03z'/%3e%3c/svg%3e") !important;
+  background-repeat: no-repeat !important;
+  background-position: right calc(0.375em + 0.1875rem) center !important;
+  background-size: calc(0.75em + 0.375rem) calc(0.75em + 0.375rem) !important;
+}
+
+/* Style personnalisé pour le conteneur d'alerte de succès */
+#successAlert {
+  background-color: #198754 !important; /* Vert Bootstrap pro */
+  color: #ffffff !important;
+  border: none !important;
+  transition: all 0.5s ease-in-out;
+}
+
+#successAlert h5 {
+  color: #ffffff !important;
+}
+
+#successAlert .border-top {
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+
+
+/* BOUTONS FILTRE (BASE) */
+/* ============================= */
+/* Conteneur principal du filtre */
+.filter-container {
+    position: relative;
+    display: inline-block;
+}
+
+/* Le bouton principal "Nos freelances ▼" */
+.main-btn {
+    background-color: #052a42; /* Bleu Bootstrap (ou ta couleur primaire) */
+    color: white;
+    border: none;
+    padding: 12px 24px;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 15px rgba(13, 110, 253, 0.2);
+}
+
+.main-btn:hover {
+    background-color: #756807;
+    transform: translateY(-2px);
+}
+
+.main-btn span {
+    font-size: 12px;
+    transition: transform 0.3s ease;
+}
+
+/* Rotation de la flèche quand le menu est ouvert */
+.main-btn.open span {
+    transform: rotate(180deg);
+}
+
+/* La liste des sous-catégories (Cachée par défaut) */
+.filter-list {
+    position: absolute;
+    top: 120%;
+    left: 0;
+    z-index: 100;
+    display: flex;
+    gap: 10px;
+    background: white;
+    padding: 15px;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Classe ajoutée en JS pour afficher la liste */
+.filter-list.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+/* Style individuel de tes .filter-btn */
+.filter-btn {
+    border: 1px solid #dee2e6;
+    background-color: #f8f9fa;
+    color: #495057;
+    padding: 8px 18px;
+    border-radius: 20px;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    white-space: nowrap; /* Évite que le texte passe à la ligne */
+    transition: all 0.25s ease;
+}
+
+/* Effet Hover sur les sous-catégories */
+.filter-btn:hover {
+    background-color: #e9ecef;
+    color: #212529;
+    border-color: #ced4da;
+}
+
+/* État actif quand une sous-catégorie est sélectionnée */
+.filter-btn.active {
+    background-color: #212529;
+    color: #ffffff;
+    border-color: #212529;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+}
+
+/* Si l'écran est petit (Mobile) : aligne les boutons verticalement */
+@media (max-width: 768px) {
+    .filter-list {
+        flex-direction: column;
+        width: 250px;
+    }
+}
