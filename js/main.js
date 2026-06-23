@@ -274,7 +274,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // --------------------------------------------------------
     // VALIDER LE MESSAGE (Requis + 20 caractères min)
-    // --------------------------------------------------------
+    //
     const messageValue = message.value.trim();
     if (messageValue === "") {
       messageError.innerText = "Le message ne peut pas être vide.";
@@ -291,9 +291,9 @@ document.addEventListener("DOMContentLoaded", () => {
       message.classList.add("is-valid");
     }
 
-    // --------------------------------------------------------
+  
     // TOUT EST VALIDE : Affichage du succès
-    // --------------------------------------------------------
+    
     if (isFormValid) {
       // 1. On affiche l'alerte de succès en retirant la classe 'd-none' de Bootstrap
       successAlert.classList.remove("d-none");
