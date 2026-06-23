@@ -406,7 +406,7 @@ footer .text-muted{
 
 /* bouton je cherches freelances  */
 .jecher{
-    background: var(--primary);
+    background: var(--accent);
     color: #f8fafc !important;
     border-radius: 2cm;
 
@@ -740,8 +740,8 @@ body {
     grid-template-columns: 0.8fr 1.1fr 1.1fr;
     
     /* La ligne 1 (cartes bleues/marron) est moins haute (200px) que la ligne 2 (250px) */
-    grid-template-rows: minmax(200px, auto) minmax(250px, auto); 
-    gap: 25px;
+    /* grid-template-rows: minmax(200px, auto) minmax(250px, auto); 
+    gap: 25px; */
   }
 
   /* --- POSITIONNEMENT STRICT DANS LA GRILLE --- */
@@ -888,8 +888,8 @@ body {
 
 /* 4. Style individuel des cartes (Fixe la largeur pour le glissement) */
 .cardvaleur {
-    flex: 0 0 290px !important;        /* Force chaque carte à faire exactement 290px de large sur mobile */
-    scroll-snap-align: center !important; /* Centre automatiquement la carte à l'écran après le glissement */
+    flex: 0 0 290px ;        /* Force chaque carte à faire exactement 290px de large sur mobile */
+    scroll-snap-align: center ; /* Centre automatiquement la carte à l'écran après le glissement */
     border: none !important;           /* Supprime la bordure par défaut de Bootstrap */
     border-radius: 15px !important;    /* Arrondit les angles de la carte */
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08) !important; /* Ajoute une ombre douce */
@@ -905,16 +905,8 @@ body {
     justify-content: space-between !important; /* Pousse le bouton tout en bas et le titre tout en haut */
 }
 
-/* 6. Style des icônes et des titres */
-.statt {
-    color: #8B5A00 !important;         /* Applique votre couleur Or */
-    font-size: 1.35rem !important;     /* Taille de police adaptée aux smartphones */
-    font-weight: 600 !important;       /* Titre en semi-gras */
-}
 
-.statt i {
-    margin-right: 8px !important;      /* Espace entre l'icône Bootstrap et le texte */
-}
+
 
 /* 7. Style du bouton de la carte */
 .btn-gold-slider {
@@ -936,17 +928,304 @@ body {
    MEDIA QUERIES (AJUSTEMENTS TABLETTES ET ORDINATEURS)
    ========================================================================== */
 
-/* Écrans intermédiaires (Tablettes à partir de 768px) */
-@media (min-width: 768px) {
-    .cardvaleur {
-        flex: 0 0 330px !important;    /* Élargit les cartes à 330px sur tablette */
-    }
+
+
+
+.hero-img {
+     box-shadow: 0 10px 30px rgba(7, 93, 110, 0.15);
+    
+    /* Optionnel : si tu veux des bords arrondis comme tes cartes */
+    border-radius: 70px; 
+
+}
+/* ==========================================================================
+   1. LES VARIABLES DU MODE SOMBRE
+   ========================================================================== */
+body.dark-theme {
+    --bg: #031230;          /* Fond global sombre */
+    --body-bg: #081636;     /* Fond du site nuit profonde */
+    --card: #132651;        /* Cartes sombres adaptées */
+
+    --primary: #074368;     /* Bleu plus éclatant pour le mode sombre */
+    --primary-light: #4bc3ff;
+
+    --accent: #b3841e;      /* Or plus lumineux pour le contraste */
+    --accent-light: #bb8c30;
+
+    --text: #f8fafc;        /* Texte principal blanc cassé */
+    --text-muted: #94a3b8;  /* Texte secondaire gris clair */
+    
+    --navbar-bg: rgba(15, 23, 42, 0.95); 
+    --border-color: rgba(255, 255, 255, 0.08);
 }
 
-/* Grands écrans (Ordinateurs à partir de 1200px) */
-@media (min-width: 1200px) {
-    .cards-slider {
-        justify-content: center !important; /* Centre la grille complète de cartes s'il y a assez de place */
-        overflow-x: visible !important;     /* Désactive le scroll devenu inutile sur grand écran */
-    }
+/* ==========================================================================
+   2. LES CORRECTIONS COMPATIBLES DARK MODE
+   ========================================================================== */
+
+/* Applique la couleur de texte dynamique globale */
+body {
+    background: var(--body-bg);
+    color: var(--text);
+    transition: background 0.4s ease, color 0.4s ease;
+}
+
+/* Force les titres à passer en blanc/clair au lieu de rester bleu nuit */
+h2, h3 {
+    color: var(--text) !important;
+    transition: color 0.4s ease;
+}
+
+p {
+    color: var(--bg) !important;
+    transition: color 0.4s ease;
+}
+
+/* Navbar scrollée en mode sombre */
+body.dark-theme .navbar.navbar-scrolled {
+    background: rgba(27, 36, 56, 0.98) !important;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Rend l'icône soleil jaune or quand le mode sombre est actif */
+body.dark-theme #themeToggle i {
+    color: #876a0b; 
+}
+
+/* ==========================================================================
+   3. ADAPTATION DU BENTO GRID (SECTION ABOUT)
+   ========================================================================== */
+body.dark-theme .step1 { 
+    background-color: var(--card); 
+    color: var(--text); 
+    border: 1px solid var(--border-color); 
+}
+body.dark-theme .step1 p { 
+    color: var(--text-muted) !important; 
+}
+body.dark-theme .step1 .step-title { 
+    color: var(--accent); 
+}
+body.dark-theme .step1 .icon-circle-large { 
+    background: #151c2c; 
+}
+
+/* Changements de couleur des cartes Bento au survol en mode sombre */
+body.dark-theme .step1:hover { background-color: #242f46; }
+body.dark-theme .step2:hover { background-color: #0e6385; }
+body.dark-theme .step3:hover { background-color: #945901; }
+body.dark-theme .step4:hover { background-color: #15273f; }
+/* ==========================================================================
+   CORRECTIONS DE CONTRASTE (CARTES BLANCHES & PARAGRAPHES)
+   ========================================================================== */
+
+body.dark-theme {
+    /* Sécurité pour forcer TOUS les paragraphes à devenir clairs et lisibles */
+    --text-muted: #cdd1d6; 
+}
+
+/* Force TOUS les paragraphes du site à devenir clairs en Dark Mode */
+body.dark-theme p {
+    color: var(--text-muted) !important;
+}
+
+/* --- 1. La carte blanche du Bento Grid (About) --- */
+body.dark-theme .step1 {
+    background-color: var(--card) !important; /* Devient bleu nuit foncé */
+    color: var(--text) !important;            /* Texte blanc cassé */
+    border: 1px solid var(--border-color) !important;
+}
+
+/* --- 2. Les cartes blanches du Slider/Carrousel (.cardvaleur) --- */
+body.dark-theme .cardvaleur {
+    background: var(--card) !important;       /* Devient bleu nuit foncé */
+    color: var(--text) !important;            /* Texte blanc cassé */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4) !important; /* Ombre plus lourde */
+}
+
+/* --- 3. Les cartes de la grille des services --- */
+body.dark-theme .service-card {
+    background: var(--card) !important;
+    color: var(--text) !important;
+    border-color: var(--border-color) !important;
+}
+/*
+   AJUSTEMENT DES ICÔNES EN MODE SOMBRE
+   */
+
+/* Rend TOUTES les icônes Bootstrap blanches par défaut en mode sombre */
+body.dark-theme i[class^="bi-"], 
+body.dark-theme i[class*=" bi-"] {
+    color: #ffffff !important;
+}
+
+/* --- 1. L'icône de l'étape 1 du Bento (le grand cercle) --- */
+body.dark-theme .step1 .icon-circle-large i {
+    color: #ffffff !important;
+}
+
+/* --- 2. Les icônes des cartes de services --- */
+body.dark-theme .service-card i {
+    color: #ece6d5 !important;
+}
+
+/* --- 3. Optionnel : Ton bouton de changement de thème (Soleil) --- */
+/* Si tu préfères qu'il reste jaune or pour le style, garde ce bloc, sinon supprime-le */
+body.dark-theme #themeToggle i {
+    color: #ffc107 !important; 
+}
+
+/* ==========================================================================
+   CORRECTIONS FINALES ADAPTÉES À AFRITALENT (DESIGN CAPTURE)
+   ========================================================================== */
+
+body.dark-theme {
+    /* 1. Changement du fond noir en un bleu nuit profond ultra-pro */
+    --bg: #0a111e;          /* Fond des sections */
+    --body-bg: #060b27;     /* Fond de la page globale */
+    
+    /* 2. Couleur sombre adaptée pour tes cartes Bootstrap */
+    --card: #182133;        /* Bleu nuit intermédiaire pour détacher les cartes */
+    --text: #f8fafc;        /* Blanc cassé pour les noms (Astou, Amadou...) */
+    --text-muted: #94a3b8;  /* Gris clair pour les descriptions et pays */
+}
+
+/* On force l'application des variables sur les cartes Bootstrap (.card) */
+body.dark-theme .card,
+body.dark-theme .service-card,
+body.dark-theme .cardvaleur {
+    background-color: var(--card) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important; /* Bordure très discrète */
+}
+
+/* Correction des textes à l'intérieur des cartes freelances */
+body.dark-theme .card h5, 
+body.dark-theme .card .card-title,
+body.dark-theme .card font {
+    color: var(--text) !important; /* Le nom passe en blanc */
+}
+
+body.dark-theme .card p,
+body.dark-theme .card .text-muted,
+body.dark-theme .card-body {
+    color: var(--text-muted) ; /* Le métier et la description passent en gris clair lisible */
+}
+
+/* Correction spécifique si Bootstrap force le texte en gris via des classes natives */
+body.dark-theme .card .text-secondary,
+body.dark-theme .card font[color] {
+    color: var(--text-muted) !important;
+}
+/* pour le footer */
+/* ==========================================================================
+   FOOTER VERROUILLÉ EN DARK MODE CONSTANT
+   ========================================================================== */
+footer {
+    background-color: #0d1c3a !important; /* Fond bleu nuit très foncé constant */
+    color: #f8fafc !important;            /* Texte blanc cassé constant */
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+/* On force tous les éléments internes du footer à rester clairs/gris */
+footer h5, 
+footer h4, 
+footer .navbar-brand {
+    color: #f8fafc !important; /* Titres en blanc */
+}
+
+footer p, 
+footer .text-muted, 
+footer span {
+    color: #94a3b8 !important; /* Descriptions et sous-titres en gris clair */
+}
+
+footer a {
+    color: #94a3b8 !important; /* Liens en gris clair par défaut */
+    transition: color 0.3s ease;
+}
+
+footer a:hover {
+    color: var(--accent) !important; /* Le survol utilise ta couleur or/accent */
+    text-decoration: none;
+}
+
+
+
+/* ==========================================================================
+   BOUTON RETOUR EN HAUT (BACK TO TOP)
+   ========================================================================== */
+#back-to-top {
+    position: fixed;
+    bottom: 30px;
+    right: -60px; /* 👈 Caché par défaut à droite de l'écran */
+    z-index: 1050; /* Reste au-dessus de tout le monde */
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background-color: var(--accent); /* Ta couleur Or */
+    color: white !important;
+    font-size: 1.5rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s cubic-bezier(0.25, 0.8, 0.25, 1); /* Animation fluide */
+}
+
+/* Force l'icône à l'intérieur à rester blanche */
+#back-to-top i {
+    color: white !important;
+    line-height: 0;
+}
+
+#back-to-top:hover {
+    background-color: var(--primary); /* Devient bleu au survol */
+    transform: translateY(-5px); /* Petit effet de saut */
+}
+
+
+
+/* 🚀 Classe activée par le JavaScript quand on scroll (> 300px) */
+#back-to-top.scroll-show {
+    right: 30px; /* 👈 Glisse élégamment vers l'intérieur de l'écran */
+}
+
+/* ==========================================================================
+   CORRECTION DU TEXTE DES CARTES (LIGHT MODE VS DARK MODE)
+   ========================================================================== */
+
+/* ☀️ 1. STYLE PAR DÉFAUT (LIGHT MODE) */
+/* Force le texte des descriptions et des pays à redevenir sombre */
+.card p,
+.card .text-muted,
+.card-body,
+.card span {
+    color: #3c4e60 !important; /* Un gris foncé très lisible sur fond blanc */
+    transition: color 0.3s ease;
+}
+
+/* Force les titres des métiers (data scientist, Administrateur...) à être bien visibles */
+.card h5,
+.card h4,
+.card .card-title {
+    color: #205c76 !important; /* Ton bleu principal pour les métiers */
+    transition: color 0.3s ease;
+}
+
+
+/* 🌙 2. STYLE EN DARK MODE */
+/* On bascule sur des couleurs claires UNIQUEMENT quand la classe dark-theme est active */
+body.dark-theme .card p,
+body.dark-theme .card .text-muted,
+body.dark-theme .card-body,
+body.dark-theme .card span {
+    color: #94a3b8 !important; /* Gris clair sur fond sombre */
+}
+
+body.dark-theme .card h5,
+body.dark-theme .card h4,
+body.dark-theme .card .card-title {
+    color: #f8fafc !important; /* Blanc cassé pour les titres sur fond sombre */
 }
