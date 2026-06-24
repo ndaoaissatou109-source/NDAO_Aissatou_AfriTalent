@@ -88,6 +88,7 @@ body{
     transition:.3s; /* animation */
 }
 
+
 /* effet quand on passe la souris */
 .btn-gold:hover{
     transform:translateY(-3px); /* petit effet de montée */
@@ -1424,4 +1425,10 @@ body.dark-theme .card .card-title {
         flex-direction: column;
         width: 250px;
     }
+}
+
+
+.navbar a.active {
+  border-bottom: 3px solid #9a7a06; /* Ligne bleue sous le texte */
+ 
 }
